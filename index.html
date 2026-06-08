@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lyme Vaccine Development Awareness Dashboard</title>
+<meta name="description" content="Source-backed Lyme vaccine development dashboard with pipeline funnel, filters, evidence matrix, records, gaps, and provenance." />
+<style>
+:root{
+  --bg:#f6f8fb;--card:#ffffff;--ink:#18212f;--muted:#5b6778;--line:#dbe3ee;--soft:#eef5fb;
+  --accent:#0c3659;--accent2:#1f6f9f;--stage:#ffbf16;--warn:#fff6dd;--warnline:#e5bf5a;
+  --good:#e9f8ef;--bad:#ffefef;--shadow:0 1px 8px rgba(15,23,42,.08);--radius:18px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.45}.wrap{max-width:1320px;margin:0 auto;padding:26px 20px 64px}a{color:#0b5e8e}.hero{background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-120px;top:-120px;width:300px;height:300px;border-radius:50%;background:rgba(31,111,159,.09)}h1{font-size:36px;line-height:1.1;margin:0 0 10px}.lead{font-size:16px;max-width:1040px;color:#344459;margin:0}.nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.nav a{display:inline-flex;text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 10px;color:#26435a;font-size:13px;font-weight:700}.grid{display:grid;gap:14px}.cards{grid-template-columns:1.2fr repeat(3,minmax(0,1fr));margin-top:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}.card h2,.card h3{margin:0 0 8px}.card h2{font-size:21px}.metric{font-size:30px;font-weight:850;letter-spacing:-.02em}.small{font-size:13px;color:var(--muted)}.section{margin-top:20px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap}.section-title h2{margin:0}.pill{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:999px;background:#fff;padding:4px 9px;font-size:12px;color:#435064;font-weight:700}.warn{background:var(--warn);border-color:var(--warnline)}.good{background:var(--good)}.bad{background:var(--bad)}.sources{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.source-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}.source-item strong{display:block}.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px}.filters .wide{grid-column:span 2}label{display:block;font-size:12px;font-weight:800;color:#4b5b6c;margin-bottom:4px}input,select,button{font:inherit;border:1px solid var(--line);border-radius:11px;background:#fff;padding:9px 10px;min-height:40px;width:100%}button{cursor:pointer;background:var(--accent);color:#fff;border-color:var(--accent);font-weight:800}.secondary{background:#fff;color:#17324c;border-color:var(--line)}.button-row{display:flex;gap:8px;align-items:end;flex-wrap:wrap}.button-row button{width:auto}.funnel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:auto}.stage-grid{min-width:980px;display:grid;grid-template-columns:repeat(7,minmax(132px,1fr));gap:0;border-bottom:1px solid var(--line)}.stage-head{background:#e8f2fb;border-right:1px solid var(--line);padding:13px 10px;text-align:center;font-weight:850;color:#0c2a44;position:relative}.stage-head:not(:last-child):after{content:"›";position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:30px;color:#0c2a44;z-index:2}.candidate-lane{min-width:980px;display:grid;grid-template-columns:repeat(7,minmax(132px,1fr));border-bottom:1px solid var(--line);align-items:stretch}.candidate-lane:last-child{border-bottom:0}.lane-meta{grid-column:1/8;background:#fbfdff;border-bottom:1px solid var(--line);padding:8px 12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.lane-cell{min-height:92px;border-right:1px solid var(--line);padding:9px}.lane-cell:last-child{border-right:0}.candidate-card{background:#fff;border:1px solid #f2c453;border-radius:13px;padding:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);position:relative}.candidate-card:before{content:"";position:absolute;left:9px;right:9px;top:-8px;height:7px;background:var(--stage);border-radius:99px}.candidate-card h3{font-size:15px;margin:0 0 4px}.candidate-card p{margin:5px 0}.status-note{font-size:12px;color:#5d4a07}.discrepancy{margin-top:7px;border-left:4px solid #d19300;background:#fff9e8;padding:8px;border-radius:8px;font-size:12px}.table-wrap,.matrix-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{font-size:12px;color:#536171;background:#f6f9fc;text-transform:uppercase;letter-spacing:.03em}tr:last-child td{border-bottom:0}.candidate-table{min-width:1020px}.matrix{min-width:860px}.matrix th,.matrix td{text-align:center;border-right:1px solid var(--line)}.matrix th:first-child{text-align:left;width:280px}.matrix th:last-child,.matrix td:last-child{border-right:0}.cell{cursor:pointer;font-weight:850;border-radius:9px;min-width:64px;border:1px solid transparent;color:#102033}.cell:hover{outline:3px solid rgba(12,54,89,.22)}.c0{background:#f7f7f4;color:#9aa5ad}.c1{background:#e8f2fb}.c2{background:#d0e5f5}.c3{background:#add1e9}.c4{background:#79afd1}.c5{background:#287da9;color:white}.legend{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.legend span{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#607080}.sw{width:18px;height:18px;border-radius:4px;border:1px solid var(--line)}.records{display:grid;gap:10px}.record{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:var(--shadow)}.record h3{margin:0 0 6px;font-size:17px}.chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.chip{font-size:12px;background:var(--soft);border:1px solid var(--line);padding:3px 7px;border-radius:999px;color:#435366}.record p{margin:8px 0}.gap-list{columns:2;column-gap:28px}.gap-list li{break-inside:avoid;margin-bottom:10px}.seed-image{max-width:100%;border:1px solid var(--line);border-radius:14px;background:#fff}.hidden{display:none}.error{background:#fee;border:1px solid #e99;padding:14px;border-radius:12px;color:#8a1f1f}.footer{margin-top:22px;color:#667085;font-size:12px}@media(max-width:980px){.cards{grid-template-columns:1fr 1fr}.filters{grid-template-columns:1fr 1fr}.filters .wide{grid-column:span 2}.sources{grid-template-columns:1fr 1fr}.gap-list{columns:1}}@media(max-width:640px){.wrap{padding:16px 12px 48px}h1{font-size:28px}.cards,.filters,.sources{grid-template-columns:1fr}.filters .wide{grid-column:span 1}.button-row button{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <h1 id="pageTitle">Lyme Vaccine Development Awareness Dashboard</h1>
+    <p id="summary" class="lead">Loading source-backed Lyme vaccine pipeline and evidence records…</p>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#funnel">Pipeline funnel</a>
+      <a href="#filters">Filters</a>
+      <a href="#matrix-section">Evidence matrix</a>
+      <a href="#records-section">Evidence records</a>
+      <a href="#gaps-section">Priority gaps</a>
+      <a href="#method-section">Method</a>
+    </nav>
+  </header>
+
+  <section class="grid cards" aria-label="Dashboard status">
+    <div class="card"><h2>Update status</h2><p id="statusLine" class="small">Loading…</p></div>
+    <div class="card"><div id="candidateCount" class="metric">—</div><div class="small">candidates visible</div></div>
+    <div class="card"><div id="recordCount" class="metric">—</div><div class="small">evidence records visible</div></div>
+    <div class="card"><div id="sourceGroupCount" class="metric">—</div><div class="small">source groups monitored</div></div>
+  </section>
+
+  <section id="funnel" class="section">
+    <div class="section-title"><h2>Pipeline funnel</h2><span class="pill warn">Seeded from image; current status source-checked where possible</span></div>
+    <p class="small">Candidate positions reflect the dashboard status field. Open each card’s source link before using the stage in outreach or analysis.</p>
+    <div id="funnelGrid" class="funnel"></div>
+  </section>
+
+  <section class="section card">
+    <h2>Source-status alerts</h2>
+    <div id="alerts"></div>
+  </section>
+
+  <section class="section card">
+    <h2>Sources searched / monitored</h2>
+    <p class="small">The same source-provenance concept used in the RSV evidence map is adapted here: registry, literature, public health, regulatory, developer, and synthesis sources are tracked separately.</p>
+    <div id="sources" class="sources"></div>
+  </section>
+
+  <section id="filters" class="section card">
+    <h2>Filter the map</h2>
+    <div class="filters">
+      <div class="wide"><label for="q">Search text</label><input id="q" placeholder="Search candidate, developer, phase, population, tags, finding…" /></div>
+      <div><label for="rowFilter">Evidence domain</label><select id="rowFilter"><option value="">All domains</option></select></div>
+      <div><label for="colFilter">Evidence type</label><select id="colFilter"><option value="">All evidence types</option></select></div>
+      <div><label for="phaseFilter">Pipeline stage</label><select id="phaseFilter"><option value="">All stages</option></select></div>
+      <div><label for="devFilter">Developer</label><select id="devFilter"><option value="">All developers</option></select></div>
+      <div><label for="platformFilter">Platform</label><select id="platformFilter"><option value="">All platforms</option></select></div>
+      <div><label for="popFilter">Population</label><select id="popFilter"><option value="">All populations</option></select></div>
+      <div><label for="routeFilter">Route</label><select id="routeFilter"><option value="">All routes</option></select></div>
+      <div><label for="verifyFilter">Verification</label><select id="verifyFilter"><option value="">All verification statuses</option></select></div>
+      <div><label for="dateBasis">Date basis</label><select id="dateBasis"><option value="evidence_update_date">Source published/updated</option><option value="map_record_updated">Map record updated</option></select></div>
+      <div><label for="datePreset">Updated since</label><select id="datePreset"><option value="">All dates</option><option value="week">1 week ago</option><option value="year">1 year ago</option><option value="custom">Custom date</option></select></div>
+      <div><label for="customDate">Selected/custom date</label><input id="customDate" type="date" /></div>
+      <div class="button-row"><button id="resetBtn" type="button">Reset</button><button id="copyBtn" type="button" class="secondary">Copy visible IDs</button></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title"><h2>Candidates</h2><span class="pill"><span id="visibleCandidateText">—</span> visible</span></div>
+    <div class="table-wrap"><table id="candidateTable" class="candidate-table"></table></div>
+  </section>
+
+  <section id="matrix-section" class="section">
+    <div class="section-title"><h2>Evidence matrix</h2><span id="cellFilterPill" class="pill hidden"></span></div>
+    <p class="small">Click a cell to filter records to that evidence-domain/evidence-type intersection. Cell intensity indicates the number of matching records after current filters are applied.</p>
+    <div class="legend"><span><i class="sw c0"></i>0 / gap</span><span><i class="sw c1"></i>1</span><span><i class="sw c2"></i>2</span><span><i class="sw c3"></i>3–4</span><span><i class="sw c4"></i>5–7</span><span><i class="sw c5"></i>8+</span></div>
+    <div class="matrix-wrap"><table id="matrix" class="matrix"></table></div>
+  </section>
+
+  <section id="records-section" class="section">
+    <div class="section-title"><h2>Evidence records</h2><span class="pill"><span id="visibleRecordText">—</span> visible</span></div>
+    <div id="records" class="records"></div>
+  </section>
+
+  <section id="gaps-section" class="section card">
+    <h2>Priority evidence gaps surfaced by the map</h2>
+    <ul id="gaps" class="gap-list"></ul>
+  </section>
+
+  <section id="method-section" class="section card">
+    <h2>Method and provenance</h2>
+    <p id="methodText">This dashboard is generated from repository data.</p>
+    <p class="small" id="disclaimer"></p>
+    <p><a href="data/lyme_vaccine_pipeline_seed_v0_1.csv">Download candidate CSV</a> · <a href="data/lyme_vaccine_evidence_records_v0_1.csv">Download evidence records CSV</a> · <a href="data/lyme_vaccine_map_data_v0_1.json">Open JSON source of truth</a></p>
+    <details>
+      <summary>Original funnelgram seed image</summary>
+      <p class="small">This is preserved as provenance. Prefer source-backed status fields for public-facing claims.</p>
+      <img src="assets/funnelgram_seed.png" alt="User-provided funnelgram seed image of Lyme disease vaccine pipeline" class="seed-image" />
+    </details>
+  </section>
+
+  <div id="loadError" class="error hidden"></div>
+  <div class="footer">Generated from repository data. Public awareness and evidence planning only.</div>
+</div>
+<script>
+const DATA_URL = 'data/lyme_vaccine_map_data_v0_1.json?cacheBust=' + Date.now();
+const state = { data:null, candidates:[], records:[], filteredCandidates:[], filteredRecords:[], cell:null };
+const $ = id => document.getElementById(id);
+function esc(s){return String(s ?? '').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function fmtDate(s){if(!s)return '—'; const d=new Date(String(s).slice(0,10)+'T00:00:00'); if(Number.isNaN(d.getTime())) return s; return d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});} 
+function isoDaysAgo(n){const d=new Date(); d.setDate(d.getDate()-n); return d.toISOString().slice(0,10);} 
+function cellClass(n){return n===0?'c0':n===1?'c1':n===2?'c2':n<5?'c3':n<8?'c4':'c5';}
+function uniq(arr){return [...new Set(arr.filter(Boolean).map(x=>String(x).trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b));}
+function splitVals(s){return String(s||'').split(/[;|,]/).map(x=>x.trim()).filter(Boolean)}
+function addOptions(id, values){const el=$(id); for(const v of values){const o=document.createElement('option'); o.value=v; o.textContent=v; el.appendChild(o);}}
+function candidateText(c){return Object.values(c).join(' ').toLowerCase();}
+function recordText(r){return Object.values(r).join(' ').toLowerCase();}
+function passesDate(r){const preset=$('datePreset').value; if(!preset) return true; let since=preset==='week'?isoDaysAgo(7):preset==='year'?isoDaysAgo(365):$('customDate').value; if(!since) return true; const basis=$('dateBasis').value; const val=String(r[basis]||'').slice(0,10); return val && val >= since;}
+function includesFold(haystack, needle){return String(haystack||'').toLowerCase().includes(String(needle||'').toLowerCase());}
+function candidatePasses(c){
+  const q=$('q').value.trim().toLowerCase(), phase=$('phaseFilter').value, dev=$('devFilter').value, platform=$('platformFilter').value, pop=$('popFilter').value, route=$('routeFilter').value, verify=$('verifyFilter').value;
+  if(q && !candidateText(c).includes(q)) return false;
+  if(phase && c.current_stage_id!==phase && c.current_stage!==phase) return false;
+  if(dev && !includesFold(c.developer,dev)) return false;
+  if(platform && !includesFold(c.platform,platform)) return false;
+  if(pop && !includesFold(c.population,pop)) return false;
+  if(route && !includesFold(c.route,route)) return false;
+  if(verify && !includesFold(c.source_confidence,verify)) return false;
+  return true;
+}
+function recordPasses(r, visibleCandidateIds){
+  const q=$('q').value.trim().toLowerCase(), row=$('rowFilter').value, col=$('colFilter').value, phase=$('phaseFilter').value, dev=$('devFilter').value, platform=$('platformFilter').value, pop=$('popFilter').value, route=$('routeFilter').value, verify=$('verifyFilter').value;
+  if(state.cell && (r.matrix_row!==state.cell.row || r.matrix_column!==state.cell.col)) return false;
+  if(row && r.matrix_row!==row) return false;
+  if(col && r.matrix_column!==col) return false;
+  if(r.candidate_id && !visibleCandidateIds.has(r.candidate_id) && r.candidate_id !== 'GENERAL-LYME-AWARENESS') return false;
+  if(q && !recordText(r).includes(q) && ![...visibleCandidateIds].some(id=>r.candidate_id===id)) return false;
+  if(phase && !includesFold(r.phase, phase) && !(state.data.candidates||[]).find(c=>c.id===r.candidate_id && c.current_stage_id===phase)) return false;
+  if(dev && !includesFold(r.developer,dev)) return false;
+  if(platform && !includesFold(r.product_platform,platform)) return false;
+  if(pop && !includesFold(r.population,pop)) return false;
+  if(route && !includesFold(r.route,route)) return false;
+  if(verify && !includesFold(r.verification_status,verify)) return false;
+  return passesDate(r);
+}
+function applyFilters(){
+  state.filteredCandidates=state.candidates.filter(candidatePasses);
+  const ids=new Set(state.filteredCandidates.map(c=>c.id));
+  state.filteredRecords=state.records.filter(r=>recordPasses(r,ids));
+  $('candidateCount').textContent=state.filteredCandidates.length;
+  $('recordCount').textContent=state.filteredRecords.length;
+  $('visibleCandidateText').textContent=state.filteredCandidates.length;
+  $('visibleRecordText').textContent=state.filteredRecords.length;
+  renderFunnel(); renderCandidateTable(); renderMatrix(); renderRecords(); renderCellPill();
+}
+function renderStatus(){
+  const md=state.data.metadata||{};
+  $('pageTitle').textContent=md.title||'Lyme Vaccine Development Awareness Dashboard';
+  $('summary').textContent=md.public_summary||'';
+  $('statusLine').textContent=`Version ${md.version||'v0.1'} · map as-of ${fmtDate(md.seed_map_as_of_date)}`;
+  $('sourceGroupCount').textContent=(state.data.method_sources||[]).length;
+  $('methodText').textContent=md.source_image_note||'This dashboard is generated from repository data.';
+  $('disclaimer').textContent=md.clinical_use_disclaimer||'';
+}
+function renderSources(){
+  $('sources').innerHTML=(state.data.method_sources||[]).map(s=>`<div class="source-item"><strong>${esc(s.name)}</strong><div class="small">${esc(s.record_type||'')}</div><p>${esc(s.search_or_monitor||'')}</p><div class="small">${esc(s.automation||'')}</div></div>`).join('');
+}
+function renderAlerts(){
+  const alerts=state.candidates.filter(c=>c.status_discrepancy && c.status_discrepancy!=='None identified in seed dashboard.');
+  $('alerts').innerHTML=alerts.map(c=>`<div class="record warn"><h3>${esc(c.candidate)}</h3><p><strong>Seed image:</strong> ${esc(c.image_status_text)}</p><p><strong>Dashboard status:</strong> ${esc(c.dashboard_status_text)}</p><p><strong>Why flagged:</strong> ${esc(c.status_discrepancy)}</p>${c.source_url?`<p><a href="${esc(c.source_url)}" target="_blank" rel="noopener">Open current source</a></p>`:''}</div>`).join('') || '<p class="small">No source-status discrepancies are flagged.</p>';
+}
+function renderFunnel(){
+  const stages=(state.data.pipeline_stages||[]).slice().sort((a,b)=>a.order-b.order);
+  let html='<div class="stage-grid">'+stages.map(s=>`<div class="stage-head">${esc(s.short||s.label)}</div>`).join('')+'</div>';
+  const candidates=state.filteredCandidates.slice().sort((a,b)=>a.stage_order-b.stage_order||a.candidate.localeCompare(b.candidate));
+  for(const c of candidates){
+    const idx=Math.max(0, stages.findIndex(s=>s.id===c.current_stage_id));
+    html+=`<div class="candidate-lane"><div class="lane-meta"><strong>${esc(c.candidate)}</strong><span class="small">${esc(c.developer)} · ${esc(c.platform)} · ${esc(c.route||'route TBA')}</span></div>`;
+    for(let i=0;i<stages.length;i++){
+      html+='<div class="lane-cell">';
+      if(i===idx){
+        html+=`<div class="candidate-card"><h3>${esc(c.image_candidate_label||c.candidate)}</h3><p class="small"><strong>${esc(c.current_stage)}</strong></p><p class="status-note">${esc(c.dashboard_status_text)}</p>${c.status_discrepancy&&c.status_discrepancy!=='None identified in seed dashboard.'?`<div class="discrepancy">${esc(c.status_discrepancy)}</div>`:''}${c.source_url?`<p class="small"><a href="${esc(c.source_url)}" target="_blank" rel="noopener">Open source</a></p>`:''}</div>`;
+      }
+      html+='</div>';
+    }
+    html+='</div>';
+  }
+  $('funnelGrid').innerHTML=html || '<div class="record warn">No candidates match current filters.</div>';
+}
+function renderCandidateTable(){
+  const rows=state.filteredCandidates.slice().sort((a,b)=>a.stage_order-b.stage_order||a.candidate.localeCompare(b.candidate));
+  let html='<thead><tr><th>Candidate</th><th>Developer</th><th>Platform</th><th>Population</th><th>Route</th><th>Current status</th><th>Image status</th><th>Source</th></tr></thead><tbody>';
+  html+=rows.map(c=>`<tr><td><strong>${esc(c.candidate)}</strong><br><span class="small">${esc(c.id)}</span></td><td>${esc(c.developer)}</td><td>${esc(c.platform)}</td><td>${esc(c.population)}</td><td>${esc(c.route)}</td><td>${esc(c.current_stage)}<br><span class="small">${esc(c.dashboard_status_text)}</span></td><td>${esc(c.image_status_text||'—')}</td><td>${c.source_url?`<a href="${esc(c.source_url)}" target="_blank" rel="noopener">source</a>`:'—'}<br><span class="small">${esc(c.source_confidence||'')}</span></td></tr>`).join('') || '<tr><td colspan="8">No candidates match current filters.</td></tr>';
+  html+='</tbody>'; $('candidateTable').innerHTML=html;
+}
+function renderMatrix(){
+  const rows=state.data.rows||uniq(state.records.map(r=>r.matrix_row)); const cols=state.data.columns||uniq(state.records.map(r=>r.matrix_column));
+  let html='<thead><tr><th>Evidence domain</th>'+cols.map(c=>`<th>${esc(c)}</th>`).join('')+'</tr></thead><tbody>';
+  for(const row of rows){
+    html+=`<tr><th>${esc(row)}</th>`;
+    for(const col of cols){
+      const n=state.filteredRecords.filter(r=>r.matrix_row===row&&r.matrix_column===col).length;
+      html+=`<td><button class="cell ${cellClass(n)}" data-row="${esc(row)}" data-col="${esc(col)}" title="Filter to ${esc(row)} × ${esc(col)}">${n}</button></td>`;
+    }
+    html+='</tr>';
+  }
+  html+='</tbody>'; $('matrix').innerHTML=html;
+  document.querySelectorAll('.cell').forEach(b=>b.addEventListener('click',()=>{state.cell={row:b.dataset.row,col:b.dataset.col}; $('rowFilter').value=''; $('colFilter').value=''; applyFilters(); $('records-section').scrollIntoView({behavior:'smooth'});}));
+}
+function renderRecords(){
+  const records=state.filteredRecords.slice().sort((a,b)=>String(b.evidence_update_date||b.map_record_updated||'').localeCompare(String(a.evidence_update_date||a.map_record_updated||''))||String(a.id).localeCompare(String(b.id)));
+  $('records').innerHTML=records.map(r=>`<article class="record"><h3>${esc(r.title||r.citation||r.id)}</h3><div class="small"><strong>${esc(r.id)}</strong> · ${esc(r.citation||'')} · ${esc(r.year||'')}</div><div class="chips"><span class="chip">${esc(r.matrix_row)}</span><span class="chip">${esc(r.matrix_column)}</span><span class="chip">${esc(r.phase||'phase not specified')}</span><span class="chip">${esc(r.population||'population not specified')}</span><span class="chip">${esc(r.route||'route not specified')}</span><span class="chip">source/update: ${esc(r.evidence_update_date||'—')}</span><span class="chip">${esc(r.verification_status||'')}</span></div><p>${esc(r.key_finding||'')}</p><p><strong>Signal:</strong> ${esc(r.evidence_signal||'')}</p><p><strong>Actionability:</strong> ${esc(r.actionability||'')}</p>${r.source_url?`<p><a href="${esc(r.source_url)}" target="_blank" rel="noopener">Open source</a></p>`:''}<div class="small">Candidate: ${esc(r.candidate||'')} · Developer: ${esc(r.developer||'')} · Tags: ${esc(r.tags||'')}</div></article>`).join('') || '<div class="record warn">No records match the current filters.</div>';
+}
+function renderGaps(){
+  $('gaps').innerHTML=(state.data.gaps||[]).map(g=>`<li><strong>${esc(g.matrix_row||'')}</strong> × ${esc(g.matrix_column||'')}: ${esc(g.gap||'No coded records in current map cell.')}</li>`).join('') || '<li>No gap list available.</li>';
+}
+function renderCellPill(){
+  const pill=$('cellFilterPill');
+  if(!state.cell){pill.classList.add('hidden'); pill.textContent=''; return;}
+  pill.classList.remove('hidden'); pill.textContent=`Cell filter: ${state.cell.row} × ${state.cell.col}`;
+}
+function initFilters(){
+  const stages=(state.data.pipeline_stages||[]).slice().sort((a,b)=>a.order-b.order);
+  addOptions('rowFilter', state.data.rows||uniq(state.records.map(r=>r.matrix_row)));
+  addOptions('colFilter', state.data.columns||uniq(state.records.map(r=>r.matrix_column)));
+  addOptions('phaseFilter', stages.map(s=>s.id));
+  [...$('phaseFilter').options].forEach(o=>{const s=stages.find(x=>x.id===o.value); if(s) o.textContent=s.label;});
+  addOptions('devFilter', uniq(state.candidates.map(c=>c.developer).concat(state.records.map(r=>r.developer))));
+  addOptions('platformFilter', uniq(state.candidates.flatMap(c=>splitVals(c.platform)).concat(state.records.flatMap(r=>splitVals(r.product_platform)))));
+  addOptions('popFilter', uniq(state.candidates.flatMap(c=>splitVals(c.population)).concat(state.records.flatMap(r=>splitVals(r.population))).slice(0,700)));
+  addOptions('routeFilter', uniq(state.candidates.map(c=>c.route).concat(state.records.map(r=>r.route))));
+  addOptions('verifyFilter', uniq(state.candidates.map(c=>c.source_confidence).concat(state.records.map(r=>r.verification_status))));
+  ['q','rowFilter','colFilter','phaseFilter','devFilter','platformFilter','popFilter','routeFilter','verifyFilter','dateBasis','datePreset','customDate'].forEach(id=>$(id).addEventListener('input',()=>{ if(id!=='rowFilter'&&id!=='colFilter') state.cell=null; applyFilters(); }));
+  $('resetBtn').addEventListener('click',()=>{['q','rowFilter','colFilter','phaseFilter','devFilter','platformFilter','popFilter','routeFilter','verifyFilter','datePreset','customDate'].forEach(id=>$(id).value=''); $('dateBasis').value='evidence_update_date'; state.cell=null; applyFilters();});
+  $('copyBtn').addEventListener('click',async()=>{const ids=['Candidates:',...state.filteredCandidates.map(c=>c.id),'','Evidence records:',...state.filteredRecords.map(r=>r.id)].join('\n'); try{await navigator.clipboard.writeText(ids); $('copyBtn').textContent='Copied'; setTimeout(()=>$('copyBtn').textContent='Copy visible IDs',1400);}catch(e){alert(ids);}});
+}
+fetch(DATA_URL).then(r=>{if(!r.ok) throw new Error(`Could not load ${DATA_URL}: HTTP ${r.status}`); return r.json();}).then(data=>{
+  state.data=data; state.candidates=data.candidates||[]; state.records=data.records||[]; state.filteredCandidates=state.candidates; state.filteredRecords=state.records;
+  renderStatus(); renderSources(); renderAlerts(); initFilters(); renderGaps(); applyFilters();
+}).catch(err=>{$('loadError').classList.remove('hidden'); $('loadError').textContent='Dashboard data could not be loaded: '+err.message+' — use a local web server or GitHub Pages rather than opening index.html directly from the file system.';});
+</script>
+</body>
+</html>
