@@ -1,0 +1,598 @@
+{
+  "generated_at_utc": "2026-06-29T18:25:19+00:00",
+  "review_rule": "Records in this file are unverified surveillance hits. Manually review sources before promoting anything into data/lyme_vaccine_map_data_v0_1.json.",
+  "watchlist": [
+    {
+      "name": "CDC Lyme vaccine page",
+      "url": "https://www.cdc.gov/lyme/about/lyme-disease-vaccine.html",
+      "why_watch": "Public health status, ACIP process, and vaccine availability wording."
+    },
+    {
+      "name": "Valneva LB6V candidate page",
+      "url": "https://valneva.com/research-development/lyme-disease/",
+      "why_watch": "Candidate overview, regulatory status, and partner updates."
+    },
+    {
+      "name": "Moderna pipeline",
+      "url": "https://www.modernatx.com/en-US/research/pipeline",
+      "why_watch": "mRNA-1975 and mRNA-1982 development phase changes."
+    },
+    {
+      "name": "Bavarian Nordic pipeline and reports",
+      "url": "https://www.bavarian-nordic.com/investor/reports.aspx",
+      "why_watch": "Early-stage Lyme candidate entry into clinical development."
+    },
+    {
+      "name": "Blue Lake Biotechnology news",
+      "url": "https://www.bluelakebio.com/news",
+      "why_watch": "PIV5-based intranasal Lyme vaccine preclinical updates."
+    },
+    {
+      "name": "Tufts Now Lyme vaccine updates",
+      "url": "https://now.tufts.edu/",
+      "why_watch": "CspZ-targeted preclinical vaccine research updates."
+    }
+  ],
+  "sources": {
+    "clinicaltrials": {
+      "query_url": "https://clinicaltrials.gov/api/v2/studies?query.cond=Lyme+Disease&query.intr=vaccine&pageSize=50&format=json",
+      "error": null,
+      "hit_count": 13,
+      "hits": [
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT07561294",
+          "title": "A Study to Evaluate the Safety, Reactogenicity, and Immunogenicity of mRNA-1982 to Prevent Lyme Disease in Healthy Participants (18 to 70 Years of Age)",
+          "overall_status": "RECRUITING",
+          "phase": "PHASE2",
+          "conditions": [
+            "Lyme Disease"
+          ],
+          "interventions": [
+            "mRNA-1982",
+            "Placebo"
+          ],
+          "lead_sponsor": "ModernaTX, Inc.",
+          "last_update_submit_date": "2026-05-27",
+          "url": "https://clinicaltrials.gov/study/NCT07561294",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT05477524",
+          "title": "An Efficacy, Safety, Tolerability, Immunogenicity, and Lot-Consistency Clinical Trial of a 6-Valent OspA-Based Lyme Disease Vaccine (VLA15)",
+          "overall_status": "COMPLETED",
+          "phase": "PHASE3",
+          "conditions": [
+            "Lyme Disease"
+          ],
+          "interventions": [
+            "VLA15",
+            "Saline"
+          ],
+          "lead_sponsor": "Pfizer",
+          "last_update_submit_date": "2026-06-03",
+          "url": "https://clinicaltrials.gov/study/NCT05477524",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT05036707",
+          "title": "Human Immune Response to Ixodes Scapularis Tick Bites",
+          "overall_status": "RECRUITING",
+          "phase": "PHASE1, PHASE2",
+          "conditions": [
+            "Tick-borne Diseases",
+            "Tick Resistance",
+            "Lyme Disease"
+          ],
+          "interventions": [
+            "Xenodiagnosis Ticks",
+            "skin biopsy",
+            "blood draw"
+          ],
+          "lead_sponsor": "National Institute of Allergy and Infectious Diseases (NIAID)",
+          "last_update_submit_date": "2026-05-05",
+          "url": "https://clinicaltrials.gov/study/NCT05036707",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT03769194",
+          "title": "Immunogenicity and Safety Study of a Vaccine Against Lyme Borreliosis, in Healthy Adults Aged 18 to 65 Years. Randomized, Controlled, Observer-blind Phase 2 Study.",
+          "overall_status": "COMPLETED",
+          "phase": "PHASE2",
+          "conditions": [
+            "Lyme Borreliosis"
+          ],
+          "interventions": [
+            "VLA15",
+            "Placebo"
+          ],
+          "lead_sponsor": "Pfizer",
+          "last_update_submit_date": "2022-12-14",
+          "url": "https://clinicaltrials.gov/study/NCT03769194",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT07500506",
+          "title": "A Study to Learn About the Safety, Tolerability, and Immunogenicity of a Fifth Dose of 6-Valent OspA-Based Lyme Disease Vaccine",
+          "overall_status": "RECRUITING",
+          "phase": "PHASE3",
+          "conditions": [
+            "Lyme Disease"
+          ],
+          "interventions": [
+            "VLA15",
+            "Placebo"
+          ],
+          "lead_sponsor": "Pfizer",
+          "last_update_submit_date": "2026-05-04",
+          "url": "https://clinicaltrials.gov/study/NCT07500506",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT03970733",
+          "title": "Alternative Schedule Study For VLA15, a Vaccine Candidate Against Lyme Borreliosis",
+          "overall_status": "COMPLETED",
+          "phase": "PHASE2",
+          "conditions": [
+            "Lyme Borreliosis"
+          ],
+          "interventions": [
+            "VLA15",
+            "Placebo"
+          ],
+          "lead_sponsor": "Pfizer",
+          "last_update_submit_date": "2023-03-24",
+          "url": "https://clinicaltrials.gov/study/NCT03970733",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT05634811",
+          "title": "Safety Study of a Vaccine to Help Protect Against Lyme Disease in Healthy Children",
+          "overall_status": "COMPLETED",
+          "phase": "PHASE3",
+          "conditions": [
+            "Lyme Disease"
+          ],
+          "interventions": [
+            "VLA15",
+            "Normal Saline"
+          ],
+          "lead_sponsor": "Pfizer",
+          "last_update_submit_date": "2026-04-14",
+          "url": "https://clinicaltrials.gov/study/NCT05634811",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT05975099",
+          "title": "A Study to Evaluate the Safety and Immunogenicity of mRNA-1975 and mRNA-1982 Against Lyme Disease in Participants 18 Through 70 Years of Age",
+          "overall_status": "COMPLETED",
+          "phase": "PHASE1, PHASE2",
+          "conditions": [
+            "Lyme Disease"
+          ],
+          "interventions": [
+            "mRNA-1975",
+            "mRNA-1982",
+            "Placebo"
+          ],
+          "lead_sponsor": "ModernaTX, Inc.",
+          "last_update_submit_date": "2025-08-21",
+          "url": "https://clinicaltrials.gov/study/NCT05975099",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT01504347",
+          "title": "Phase 1/2 Lyme Vaccine Study",
+          "overall_status": "COMPLETED",
+          "phase": "PHASE1, PHASE2",
+          "conditions": [
+            "Prophylaxis of Lyme Borreliosis"
+          ],
+          "interventions": [
+            "Multivalent recombinant OspA Lyme Borreliosis Vaccine",
+            "Multivalent recombinant OspA Lyme Borreliosis Vaccine",
+            "Multivalent recombinant OspA Lyme Borreliosis Vaccine"
+          ],
+          "lead_sponsor": "Baxalta now part of Shire",
+          "last_update_submit_date": "2021-05-03",
+          "url": "https://clinicaltrials.gov/study/NCT01504347",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT07226882",
+          "title": "A Study to Learn About Different Dosing Schedules of a Lyme Disease Vaccine in Healthy Adults",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "PHASE3",
+          "conditions": [
+            "Lyme Borreliosis"
+          ],
+          "interventions": [
+            "VLA15",
+            "Placebo"
+          ],
+          "lead_sponsor": "Pfizer",
+          "last_update_submit_date": "2026-05-04",
+          "url": "https://clinicaltrials.gov/study/NCT07226882",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT00001539",
+          "title": "A Comprehensive Clinical, Microbiological and Immunological Assessment of Patients With Suspected Post Treatment Lyme Disease Syndrome and Selected Control Populations",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Lyme Disease"
+          ],
+          "interventions": [],
+          "lead_sponsor": "National Institute of Allergy and Infectious Diseases (NIAID)",
+          "last_update_submit_date": "2026-06-04",
+          "url": "https://clinicaltrials.gov/study/NCT00001539",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT04801420",
+          "title": "Phase 2 Study Of VLA15, A Vaccine Candidate Against Lyme Borreliosis, In A Healthy Pediatric And Adult Study Population",
+          "overall_status": "COMPLETED",
+          "phase": "PHASE2",
+          "conditions": [
+            "Lyme Borreliosis"
+          ],
+          "interventions": [
+            "VLA15",
+            "Placebo"
+          ],
+          "lead_sponsor": "Pfizer",
+          "last_update_submit_date": "2026-05-04",
+          "url": "https://clinicaltrials.gov/study/NCT04801420",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "ClinicalTrials.gov API",
+          "nct_id": "NCT03010228",
+          "title": "Study Assessing the Safety, Immunogenicity and Dose Response of VLA15, A New Vaccine Candidate Against Lyme Borreliosis",
+          "overall_status": "COMPLETED",
+          "phase": "PHASE1",
+          "conditions": [
+            "Lyme Borreliosis, Nervous System"
+          ],
+          "interventions": [
+            "VLA15 with Alum",
+            "VLA15 without Alum"
+          ],
+          "lead_sponsor": "Pfizer",
+          "last_update_submit_date": "2023-03-31",
+          "url": "https://clinicaltrials.gov/study/NCT03010228",
+          "review_status": "unverified surveillance hit"
+        }
+      ]
+    },
+    "pubmed": {
+      "query_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28Lyme+disease%5BTitle%2FAbstract%5D+OR+Borrelia+burgdorferi%5BTitle%2FAbstract%5D%29+AND+vaccine%5BTitle%2FAbstract%5D%29&retmode=json&sort=pub%2Bdate&retmax=20",
+      "summary_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=42358254%2C42324826%2C42176436%2C42143044%2C42115648%2C42086599%2C42079258%2C42039481%2C42021839%2C42013167%2C41988178%2C41979588%2C41972549%2C41944639%2C41867734%2C41865865%2C41859106%2C41818320%2C41753320%2C41616647&retmode=json",
+      "error": null,
+      "hit_count": 20,
+      "hits": [
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "42358254",
+          "title": "Research progress on emerging and important Tick-Borne pathogens.",
+          "journal": "Frontiers in microbiology",
+          "pubdate": "2026",
+          "authors": [
+            "Duan G",
+            "Kong L",
+            "Duan S",
+            "Nie S",
+            "Gu W"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42358254/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "42324826",
+          "title": "The current landscape and future directions of Lyme disease vaccines.",
+          "journal": "Virulence",
+          "pubdate": "2026 Dec",
+          "authors": [
+            "Chen Z",
+            "He L",
+            "Huang X",
+            "Liang X",
+            "Liu A"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42324826/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "42176436",
+          "title": "Evaluation of EcoCRM, virus-like particles, and mRNA as vaccine platforms against Borrelia burgdorferi.",
+          "journal": "Vaccine",
+          "pubdate": "2026 Jun 20",
+          "authors": [
+            "Rocuskie-Marker CM",
+            "Huckaby AB",
+            "Conaway OM",
+            "Pyles GM",
+            "Dublin SR"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42176436/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "42143044",
+          "title": "Developing a durable, memory-driven, CspZ-targeting Lyme disease vaccine by rationale adjuvant selection.",
+          "journal": "NPJ vaccines",
+          "pubdate": "2026 May 16",
+          "authors": [
+            "McCarty M",
+            "Hernández SA",
+            "Malfetano J",
+            "Leão AC",
+            "Villar MJ"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42143044/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "42115648",
+          "title": "A double-blinded, placebo-controlled field trial of an OspA-based oral reservoir targeted vaccine against Borrelia burgdorferi.",
+          "journal": "NPJ vaccines",
+          "pubdate": "2026 May 11",
+          "authors": [
+            "Schwartz AM",
+            "Henao-Ceballos F",
+            "Arnold K",
+            "Poje J",
+            "Waugh M"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42115648/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "42086599",
+          "title": "Monovalent and multivalent OspA mRNA-LNP vaccines elicit functional antibodies and protect against Borrelia burgdorferi in mice.",
+          "journal": "NPJ vaccines",
+          "pubdate": "2026 May 5",
+          "authors": [
+            "Finn MB",
+            "Willsey G",
+            "Piazza CL",
+            "Clendenen L",
+            "Shrestha M"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42086599/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "42079258",
+          "title": "A double-blinded, placebo-controlled field trial of an OspA-based oral reservoir targeted vaccine against Borrelia burgdorferi.",
+          "journal": "bioRxiv : the preprint server for biology",
+          "pubdate": "2026 Apr 22",
+          "authors": [
+            "Schwartz AM",
+            "Henao-Ceballos F",
+            "Arnold K",
+            "Poje J",
+            "Waugh M"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42079258/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "42039481",
+          "title": "Efficacy of Purified Borrelial Lipoproteins (PBL) as an oral formulation in reducing transmission of Lyme spirochetes from reservoir hosts to Ixodes scapularis ticks.",
+          "journal": "bioRxiv : the preprint server for biology",
+          "pubdate": "2026 Apr 18",
+          "authors": [
+            "Kumaresan V",
+            "Starling-Lin JF",
+            "Ingle TM",
+            "Kilgore N",
+            "Seshu J"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42039481/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "42021839",
+          "title": "Tracking Canada's 2015 vaccine research and development priorities: Where are we a decade later?",
+          "journal": "Canada communicable disease report = Releve des maladies transmissibles au Canada",
+          "pubdate": "2026 Mar",
+          "authors": [
+            "Moqueet N",
+            "Lago K",
+            "Cortés-Kaplan S",
+            "Birdi H",
+            "Desai S"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42021839/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "42013167",
+          "title": "Broadly conserved protective epitopes on the lyme disease vaccine antigen, OspA.",
+          "journal": "PLoS pathogens",
+          "pubdate": "2026 Apr",
+          "authors": [
+            "Willsey GG",
+            "Rudolph MJ",
+            "Piazza CL",
+            "Chen Y",
+            "Freeman-Gallant G"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42013167/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "41988178",
+          "title": "From forest floor to doctor's office: the immunological journey of Borrelia burgdorferi through vertebrate hosts.",
+          "journal": "Frontiers in immunology",
+          "pubdate": "2026",
+          "authors": [
+            "Singh P",
+            "Bankhead T"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41988178/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "41979588",
+          "title": "Lyme disease in Poland in 2023.",
+          "journal": "Przeglad epidemiologiczny",
+          "pubdate": "2026 Mar 3",
+          "authors": [
+            "Zbrzeżniak JM",
+            "Paradowska-Stankiewicz I"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41979588/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "41972549",
+          "title": "In Silico-Identified Peptides of Five Borrelia burgdorferi Proteins Binding with High Affinity to Human Leukocyte Antigen (HLA) Class II Alleles.",
+          "journal": "Biology",
+          "pubdate": "2026 Mar 28",
+          "authors": [
+            "Georgopoulos AP",
+            "James LM",
+            "Sanders M"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41972549/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "41944639",
+          "title": "Testing the capacity of humanized immune system mice to induce a protective antibody response against the Lyme disease pathogen.",
+          "journal": "Microbiology spectrum",
+          "pubdate": "2026 Apr 7",
+          "authors": [
+            "Neumann N",
+            "Jacobson ML",
+            "Brehm MA",
+            "Daniels KA",
+            "Kady J"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41944639/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "41867734",
+          "title": "Homologous and Heterologous Immunization with a PIV5-Based Modified OspA Vaccine Confers Equivalent Protection Against Tick-Transmitted Borrelia burgdorferi.",
+          "journal": "bioRxiv : the preprint server for biology",
+          "pubdate": "2026 Mar 4",
+          "authors": [
+            "Kundu S",
+            "Joyner G",
+            "Abil O",
+            "Sanches MJ",
+            "Gingerich MC"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41867734/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "41865865",
+          "title": "Strategies for developing multi-epitope subunit vaccines against tick-borne protozoa and bacteria.",
+          "journal": "Veterinary journal (London, England : 1997)",
+          "pubdate": "2026 Jun",
+          "authors": [
+            "Ben Said M",
+            "Kratou M",
+            "Quiroz-Castañeda RE",
+            "Tayh G",
+            "Belkahia H"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41865865/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "41859106",
+          "title": "Treponema pallidum TprD and TprK are adhesins and their surface expression promotes spirochetal opsonophagocytosis.",
+          "journal": "Frontiers in immunology",
+          "pubdate": "2026",
+          "authors": [
+            "Zafar K",
+            "Azuama OC",
+            "Xu LH",
+            "Giacani L",
+            "Parveen N"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41859106/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "41818320",
+          "title": "An Fc-silent OspA monoclonal antibody passively protects mice from tick and intradermal Borrelia burgdorferi challenge.",
+          "journal": "PloS one",
+          "pubdate": "2026",
+          "authors": [
+            "Palmer D",
+            "Shemshadian A",
+            "Berman K",
+            "Nobles A",
+            "Willsey GG"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41818320/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "41753320",
+          "title": "The Lyme Disease Vaccine Paradox.",
+          "journal": "Journal of clinical medicine",
+          "pubdate": "2026 Feb 21",
+          "authors": [
+            "Siegel EL",
+            "Rich SM"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41753320/",
+          "review_status": "unverified surveillance hit"
+        },
+        {
+          "source": "PubMed E-utilities",
+          "pmid": "41616647",
+          "title": "Protective properties of a candidate C-terminal domain OspA vaccine for prevention of Lyme disease.",
+          "journal": "Vaccine",
+          "pubdate": "2026 Mar 7",
+          "authors": [
+            "Embers ME",
+            "Hasenkampf NR",
+            "Tardo AC",
+            "Timofeyeva Y",
+            "Wellnitz S"
+          ],
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41616647/",
+          "review_status": "unverified surveillance hit"
+        }
+      ]
+    }
+  }
+}
